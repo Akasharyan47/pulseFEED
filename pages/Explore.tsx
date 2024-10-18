@@ -33,7 +33,7 @@ const Explore: NextPage = () => {
     dark:text-slate-100 dark:[color-scheme:dark]"
     >
       <Head>
-        <title>Instagram • Explore</title>
+        <title>Explore</title>
         <meta name="description" content="Instagram Clone" />
         <link rel="icon" href="/instagram.png" />
       </Head>

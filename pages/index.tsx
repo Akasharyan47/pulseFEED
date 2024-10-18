@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   return (
     <div className="h-screen overflow-y-scroll bg-[#fafafa] text-[#262626] dark:bg-[#131313] dark:text-[#f1f5f9] dark:[color-scheme:dark]">
       <Head>
-        <title>Instagram</title>
+        <title>PulseFEED</title>
         <meta name="description" content="Instagram Clone" />
         <link rel="icon" href="/instagram.png" />
       </Head>
