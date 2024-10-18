@@ -84,7 +84,7 @@ function Header({ page }: { page: string }) {
         <div className="relative flex items-center pl-[15px] lg:pl-[100px]">
           <Link href="/">
             <a>
-              <HomeSVG page={page} />
+              {/* <HomeSVG page={page} /> */}
             </a>
           </Link>
           <Link href="/Inbox">
