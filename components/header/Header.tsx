@@ -50,7 +50,8 @@ function Header({ page }: { page: string }) {
           <Link href="/">
             <a className="w-full max-w-[103px] ">
               <div className="w-full max-w-[103px] cursor-pointer select-none">
-                <InstagramSVG disableDarkMode={false} white={false} />
+                {/* <InstagramSVG disableDarkMode={false} white={false} /> */}
+              <span>PulseFEED</span>
               </div>
             </a>
           </Link>
@@ -122,9 +123,9 @@ function Header({ page }: { page: string }) {
               {showHeartNotifications ? <HeartNotificationsWindow /> : ''}
             </div>
           </div>
-          <div className="ml-[10px] sm:ml-[22px]">
+          {/* <div className="ml-[10px] sm:ml-[22px]">
             <DarkModeButton />
-          </div>
+          </div> */}
 
           <button
             className="relative ml-[10px] h-6 w-6 sm:ml-[22px]"

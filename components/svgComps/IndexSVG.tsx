@@ -1,28 +1,39 @@
-/* eslint-disable no-nested-ternary */
 import { useAtom } from 'jotai';
+import { useState } from 'react';
 import atoms from '../../util/atoms';
 
 function IndexSVG({ page }: { page: string }) {
   const [darkMode] = useAtom(atoms.darkMode);
+  
+  // State to manage colors
+  const [innerColor, setInnerColor] = useState(darkMode ? '#262626' : 'white'); // Initial inner color
+  const [outerColor, setOuterColor] = useState(darkMode ? '#f5a623' : '#7ed321'); // Initial outer color
+
+  // Handle click to change colors
+  const handleClick = () => {
+    setInnerColor('#262626'); // Change inner color to #262626
+    setOuterColor('white'); // Change outer color to white
+  };
+
   return (
     <svg
       aria-label="Messenger"
       className="ml-[10px] cursor-pointer sm:ml-[22px]"
-      height="24"
+      height="28"
       role="img"
       viewBox="0 0 24 24"
-      width="24"
-      color={darkMode ? '#1c1c1c' : 'white'}
+      width="28"
+      onClick={handleClick} // Attach click handler
     >
       <path
         d="M12.003 2.001a9.705 9.705 0 110 19.4 10.876 10.876 0 01-2.895-.384.798.798 0 00-.533.04l-1.984.876a.801.801 0 01-1.123-.708l-.054-1.78a.806.806 0 00-.27-.569 9.49 9.49 0 01-3.14-7.175 9.65 9.65 0 0110-9.7z"
-        stroke={darkMode ? '#f1f5f9' : '#262626'}
+        stroke={darkMode ? outerColor : '#262626'}
         strokeMiterlimit="10"
         strokeWidth="1.739"
         fill={
           page === 'Inbox'
             ? darkMode
-              ? '#f1f5f9'
+              ? outerColor
               : '#262626'
             : darkMode
             ? '#262626'
@@ -35,11 +46,11 @@ function IndexSVG({ page }: { page: string }) {
         fill={
           page === 'Inbox'
             ? darkMode
-              ? '#262626'
+              ? innerColor
               : 'white'
             : darkMode
             ? 'white'
-            : '#262626'
+            : innerColor
         }
       />
     </svg>
